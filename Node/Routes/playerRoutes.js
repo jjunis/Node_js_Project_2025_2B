@@ -4,6 +4,8 @@ const router = express.Router();
 
 //초기 자원 설정
 
+const resourceFilePath = 'resources.json';                      //자원 저장 파일 경로 
+
 const initalResources = {
     metal : 500,
     crystal : 300,
@@ -53,12 +55,14 @@ router.post('/login', (req, res) => {
         return res.status(401).send({message : '비밀번호가 틀렸습니다. '});
     }
 
+    const player = global.players[name];
+
     //응답 데이터 
     const reqponsePayLoad = {
         playerName: player.playerName,
         metal : player.resources.metal,
         crystal : player.resources.crystal,
-        deuterium : player.resource.deuterium
+        deuterium : player.resources.deuterium
     }
 
     console.log("Login response playload : " , reqponsePayLoad);
@@ -66,4 +70,9 @@ router.post('/login', (req, res) => {
 
 });
 
-module.exports = router;                        //라우터를 등록한다.
+function saveResources()
+{
+    fs.writeFileSync(resourceFilePath, JSON.stringify(global.players, null, 2));            //JSON 파일로 저장
+}
+
+module.exports = router;                        //라우터 등록 

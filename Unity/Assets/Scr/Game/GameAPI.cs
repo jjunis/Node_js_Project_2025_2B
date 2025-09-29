@@ -5,8 +5,6 @@ using UnityEngine.Networking;
 using System.Text;
 using Newtonsoft.Json;
 using System;
-using UnityEditor.PackageManager.Requests;
-using Unity.VisualScripting;
 
 public class GameAPI : MonoBehaviour
 {
@@ -72,7 +70,7 @@ public class GameAPI : MonoBehaviour
                     {
                         metal = Convert.ToInt32(responseData["metal"]),
                         crystal = Convert.ToInt32(responseData["crystal"]),
-                        deuteriurm = Convert.ToInt32(responseData["deuteriurm"]),
+                        deuteriurm = Convert.ToInt32(responseData["deuterium"]),
                         Planets = new List<PlanetModel>()
                     };
                     onSuccess?.Invoke(playerMode);

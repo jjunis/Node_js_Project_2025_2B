@@ -1,0 +1,22 @@
+{
+  "2316": {
+    "playerName": "2316",
+    "password": "1234",
+    "resources": {
+      "metal": 500,
+      "crystal": 300,
+      "deuterium": 100
+    },
+    "planets": []
+  },
+  "12313": {
+    "playerName": "12313",
+    "password": "1234",
+    "resources": {
+      "metal": 500,
+      "crystal": 300,
+      "deuterium": 100
+    },
+    "planets": []
+  }
+}

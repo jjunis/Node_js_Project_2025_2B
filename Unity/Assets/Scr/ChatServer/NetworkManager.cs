@@ -201,7 +201,7 @@ public class NetworkManager : MonoBehaviour
 
         NetworkMessage message = new NetworkMessage
         {
-            type = "Chat",
+            type = "chat",
             message = messageInput.text,
         };
 
